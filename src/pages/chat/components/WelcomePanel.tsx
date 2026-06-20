@@ -12,18 +12,21 @@ type WelcomePanelProps = {
 const suggestions = [
   {
     label: '복리후생 혜택',
+    question: '복리후생비 지급 기준이 뭐야?',
     icon: giftIcon,
     className: 'border-[#F1C27D] bg-[#FFF3DC] hover:border-[#D99135]',
     iconClassName: 'bg-[#FFDDA3]',
   },
   {
-    label: '오늘의 점심 메뉴',
+    label: '동호회 신청 양식',
+    question: '동호회 신청 양식이 뭐야?',
     icon: foodIcon,
     className: 'border-[#9FD8A8] bg-[#EAF8ED] hover:border-[#4EAD5B]',
     iconClassName: 'bg-[#C8EFD0]',
   },
   {
-    label: '담당자 및 부서 연락망',
+    label: '휴가 신청',
+    question: '휴가 신청하고 싶은데 써야 할 게 있어?',
     icon: peopleListIcon,
     className: 'border-[#B8C6F0] bg-[#EEF2FF] hover:border-[#6B82D6]',
     iconClassName: 'bg-[#D8E0FF]',
@@ -46,7 +49,7 @@ export default function WelcomePanel({
             className={`flex min-h-[72px] items-center gap-3 rounded-[10px] border px-4 py-3 text-left text-[15px] font-semibold leading-5 text-primary-dark transition disabled:cursor-not-allowed disabled:opacity-60 ${suggestion.className}`}
             disabled={disabled}
             key={suggestion.label}
-            onClick={() => onSendMessage(suggestion.label)}
+            onClick={() => onSendMessage(suggestion.question)}
             type="button"
           >
             <span
